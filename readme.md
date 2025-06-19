@@ -36,7 +36,7 @@ The main logic is written in `smart_parking.cpp`. It uses a class-based design t
 
 ## 🖼 Screenshot
 
-![Simulation Output](car_parki.jpg)
+![Simulation Output](car_parki.jpg.jpg)
 
 
 ---
