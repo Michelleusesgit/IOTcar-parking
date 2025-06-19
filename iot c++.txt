@@ -1,0 +1,96 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Simulates parking slots using a boolean vector
+class SmartParkingSystem {
+private:
+    vector<bool> slots;
+    int totalSlots;
+
+public:
+    SmartParkingSystem(int n) {
+        totalSlots = n;
+        slots = vector<bool>(n, false); // false = empty
+    }
+
+    void displayStatus() {
+        cout << "\nParking Slot Status:\n";
+        for (int i = 0; i < totalSlots; ++i) {
+            cout << "Slot " << i + 1 << ": " << (slots[i] ? "Occupied" : "Available") << endl;
+        }
+    }
+
+    int findAvailableSlot() {
+        for (int i = 0; i < totalSlots; ++i) {
+            if (!slots[i]) return i;
+        }
+        return -1; // No slot available
+    }
+
+    void carEntry() {
+        int slot = findAvailableSlot();
+        if (slot == -1) {
+            cout << "⚠️  Parking Full. No slot available.\n";
+        } else {
+            slots[slot] = true;
+            cout << "✅ Car parked at slot " << slot + 1 << ".\n";
+        }
+    }
+
+    void carExit(int slotNumber) {
+        if (slotNumber < 1 || slotNumber > totalSlots) {
+            cout << "❌ Invalid slot number.\n";
+            return;
+        }
+
+        if (!slots[slotNumber - 1]) {
+            cout << "⚠️  Slot " << slotNumber << " is already empty.\n";
+        } else {
+            slots[slotNumber - 1] = false;
+            cout << "🚗 Car exited from slot " << slotNumber << ".\n";
+        }
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter number of parking slots: ";
+    cin >> n;
+
+    SmartParkingSystem parking(n);
+
+    int choice;
+    do {
+        cout << "\n--- IoT Smart Car Parking System ---\n";
+        cout << "1. Car Entry\n";
+        cout << "2. Car Exit\n";
+        cout << "3. View Parking Status\n";
+        cout << "4. Exit System\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                parking.carEntry();
+                break;
+            case 2: {
+                int slotNo;
+                cout << "Enter slot number to free: ";
+                cin >> slotNo;
+                parking.carExit(slotNo);
+                break;
+            }
+            case 3:
+                parking.displayStatus();
+                break;
+            case 4:
+                cout << "👋 Exiting the system.\n";
+                break;
+            default:
+                cout << "❌ Invalid choice. Try again.\n";
+        }
+    } while (choice != 4);
+
+    return 0;
+}
