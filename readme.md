@@ -30,9 +30,10 @@ This project mimics a basic IoT-based smart car parking system using C++. It sim
 
 ## 📄 Code
 
-📄 Code  
-## 📄 Code
-The main logic is written in [iot c++.txt](iot%20c%2B%2B.txt). It simulates a smart parking system using C++ concepts. 
+
+The main logic is implemented in [iot c++.txt](iot%20c%2B%2B.txt).  
+This program uses **object-oriented design** in C++ to simulate a smart parking system.  
+It manages parking slots dynamically, validates inputs, and provides real-time updates of lot status directly in the terminal.
 
 ---
 
@@ -46,4 +47,5 @@ The main logic is written in [iot c++.txt](iot%20c%2B%2B.txt). It simulates a sm
 ## 🌐 Live Demo
 
 ❌ *Not hosted online. This is a C++ CLI simulation.*
+
 
