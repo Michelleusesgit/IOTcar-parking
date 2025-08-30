@@ -30,7 +30,9 @@ This project mimics a basic IoT-based smart car parking system using C++. It sim
 
 ## 📄 Code
 
-The main logic is written in `smart_parking.cpp`. It uses a class-based design to manage the parking slots and operations.
+📄 Code  
+## 📄 Code
+The main logic is written in [iot c++.txt](iot%20c%2B%2B.txt). It simulates a smart parking system using C++ concepts. 
 
 ---
 
@@ -44,3 +46,4 @@ The main logic is written in `smart_parking.cpp`. It uses a class-based design t
 ## 🌐 Live Demo
 
 ❌ *Not hosted online. This is a C++ CLI simulation.*
+
